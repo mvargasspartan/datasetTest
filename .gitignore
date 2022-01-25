@@ -1,0 +1,7 @@
+/dataset
+modules/manifest_translation/__pycache__/__init__.cpython-38.pyc
+modules/manifest_translation/__pycache__/manifest_translation.cpython-38.pyc
+*.pyc
+*.pyc
+*.pyc
+/testing
