@@ -89,7 +89,7 @@ def handleCheckout_Linux(commitID, file):
 
 
 
-def processMetada(Version, file, partitions):
+def processMetada(Version, file, partitions=None):
     PATH_TO_FILE = path + "/{0}/dataset_labels.csv".format(file)
     if not os.path.exists(PATH_TO_FILE):
         print("Can't process the metadata file because of missing file 'dataset_labels.csv'")
