@@ -89,7 +89,7 @@ def handleCheckout_Linux(commitID, file):
 
 
 
-def processMetada(Version, file, partitions=None):
+def processMetada(Version, file, partitions):
     PATH_TO_FILE = path + "/{0}/dataset_labels.csv".format(file)
     if not os.path.exists(PATH_TO_FILE):
         print("Can't process the metadata file because of missing file 'dataset_labels.csv'")
@@ -182,7 +182,7 @@ def readMetadata(file):
 def updateLabels(file):
     dir_audios = path + "/{0}/audio_files/".format(file)
     destination = path + "/{0}/".format(file)
-    status = prepare_dataset(root_directory=dir_audios, overwrite_df=False, dest_directory=destination)
+    status = prepare_dataset(root_directory=dir_audios, overwrite_df=True, dest_directory=destination)
     return status
 
 def Push(version, file): 
@@ -337,7 +337,7 @@ def handle_Linux(args):
                     generateTrainValPartitions(args[2])
 
                 # update metadata
-                metadata = processMetada(version, args[2])
+                metadata = processMetada(version, args[2], calculate_partitions)
                 generateMetadata(metadata, args[2])
 
 
